@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>LearnSpace | Track Your Learning</title>
+</head>
+<body>
+
+    <!-- NAVBAR SECTION-->
+    <div class="navbar">
+        <div class="container flex">
+               <h1 class="logo">Le<i class="fab fa-atlassian fa-xs"></i>rn Sp<i class="fab fa-atlassian fa-xs"></i>ce <i class="fas fa-brain"></i></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav> 
+        </div>
+    </div>
+
+    <!-- SHOWCASE SECTION -->
+    <section class="showcase">
+        <div class="container grid">
+            <div class="showcase-text">
+                <h1>Track Your Learning</h1>
+                <p>A easy way to track your learning. Enter a topic, rate your profeciency on the topic, study the topic, and share your success with everyone! </p>
+                <a href="#" class="btn btn-outline">Read More</a>
+            </div>
+            <div class="showcase-form card">
+                <h2>Login</h2>
+                <form action="/Login" method="POST">
+                    <div class="form-control">
+                    <span class="error"></span>
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="form-control">
+                    <span class="error"></span>
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <input type="submit" value="Login" class="btn btn-primary">
+                    <a href="/">Not Registered? <span id="loginLink">Sign Up</span></a>
+                </form>
+                <h4 class="successMsg">success message</h4>
+            </div>
+        </div>
+    </section>
+
+   <!-- STATS -->
+
+    <section class="stats">
+        <div class="container">
+            <h3 class="stats-heading text-center my-1">
+                <!-- my-1 is a class for the margin on the y axis -->
+                Welcome to the best platform for learing a specific topic and studying the topic until you reach a high profeciency level on it while sharing your success with others
+            </h3>
+            <div class="grid grid-3 text-center my-4">
+                <div>
+                    <i class="fas fa-user-graduate fa-3x"></i>
+                    <h3>0</h3>
+                    <p class="text-secondary">Students Helped</p>
+                </div>
+                <div>
+                    <i class="fas fa-check-circle fa-3x"></i>
+                    <h3>0</h3>
+                    <p class="text-secondary">Student Accomplishments </p>
+                </div>
+                <div>
+                    <i class="fas fa-book-reader fa-3x"></i>
+                    <h3>0</h3>
+                    <p class="text-secondary">Topics Studied</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLI SECTION -->
+
+    <section class="cli">
+        <div class="container grid">
+            <img src="img/cli.png" alt="CLI image">
+            <div class="card">
+                <h3>Easy to use, Learning Platform</h3>
+            </div>
+            <div class="card">
+                <h3>Learn How To Learn</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLOUD SECTION -->
+
+    <section class="cloud bg-primary my-2 py-2">
+        <div class="container grid">
+            <div class="text-center">
+                <h2 class="lg">A Easier Way To Learn</h2>
+                <p class="lead my-1">Learn A Topic You Are studying Effectively</p>
+                <a href="#" class="btn btn-dark">Read More</a>
+            </div>
+            <img src="img/cloud.png" alt="">
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-dark py-5">
+        <div class="container grid grid-3">
+            <div>
+                <h1>LearnSpace.</h1>
+                <p>Copyright &copy; 2021</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="social">
+                <a href="#"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+</body>
+</html>

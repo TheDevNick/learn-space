@@ -1,0 +1,430 @@
+/******************************************************** 
+
+********************************************************/
+
+/******************************************************** 
+                GOOGLE FONT IMPORT
+********************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+/******************************************************** 
+                RESET STYLING
+********************************************************/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/******************************************************** 
+                CSS VARIABLES
+********************************************************/
+:root {
+    --primary-color: #047aea;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+
+}
+
+/******************************************************** 
+                BASE STYLING
+********************************************************/
+
+body {
+    font-family: 'lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* .logo-img {
+    height: 80px;
+    width: 80px;
+} */
+
+.logo {
+    font-size: 2.4rem;
+}
+
+.likeInfo {
+    display: flex;
+    flex-direction: column;
+    padding: .2em;
+}
+
+.cardOption {
+    color: #d9534f;
+    border-bottom: 1px solid #d9534f;
+}
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1,
+ h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    /* this keeps images within their container */
+    width: 100%;
+}
+
+code, pre {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/******************************************************** 
+                NAVBAR STYLING
+********************************************************/
+
+.navbar {
+    background: var(--primary-color);
+    color: #fff;
+    height: 70px;
+    overflow: hidden;
+
+}
+
+.successMsg {
+    color: var(--primary-color);
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+
+/******************************************************** 
+                SHOWCASE STYLING
+********************************************************/
+
+.showcase {
+    height: 400px;
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+.showcase h1 {
+    font-size: 40px;
+}
+
+.showcase p {
+    margin: 20px 0;
+}
+
+.showcase .grid {
+    grid-template-columns: 55% auto;
+    gap: 30px;
+    /* this overflow takes away the scroll bar */
+    overflow: visible;
+}
+
+.showcase-form {
+    /* Using relative because I want to use a top property */
+    position: relative;
+    top: 1px;
+    height: 470px;
+    width: 400px;
+    padding: 40px;
+    /* the z index here makes sure the form is always in front */
+    z-index: 100;
+    justify-self: flex-end;
+}
+
+.formCard input[type='text'],
+select,
+textarea {
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+#loginLink {
+    color: #1c3fa8;
+}
+
+.showcase-form .form-control {
+    margin: 30px 0;
+}
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email'],
+.showcase-form input[type='password']
+ {
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form input:focus {
+    outline: none;
+}
+
+.showcase::before, .showcase::after {
+    /* this content property must be added in order for this to work */
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    /* this adds the slant(skew on the Y axis */
+    transform: skewY(-3deg);
+    /* Chrome/safari */
+    -webkit-transform: skewY(-3deg);
+    /* Firefox */
+    -moz-transform: skewY(-3deg);
+    /* IE :( (sad face) */
+    transform: skewY(-3deg);
+}
+
+#topicHeading {
+    text-align: center;
+}
+#headerInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/******************************************************** 
+                STATS STYLING
+********************************************************/
+.stats {
+    padding-top: 100px;
+}
+
+.stats-heading {
+    max-width: 500px;
+    margin: auto;
+}
+
+.stats .grid h3 {
+    font-size: 45px;
+}
+
+.stats .grid p {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.heart:hover {
+    color: #d9534f;
+}
+
+/******************************************************** 
+                CLI STYLING
+********************************************************/
+
+.cli .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.cli .grid > *:first-child {
+    /* the first child which is a image is spanning 2 columns */
+    grid-column: 1 / span 2;
+    /* the first child which is a image is spanning 2 rows */
+    grid-row: 1 / span 2;
+}
+
+
+/******************************************************** 
+                CLOUD STYLING
+********************************************************/
+
+.cloud .grid {
+    grid-template-columns: 4fr 3fr;
+}
+
+/******************************************************** 
+                LANGUAGES STYLING
+********************************************************/
+
+.languages .flex {
+    flex-wrap: wrap;
+}
+
+.languages .card {
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+}
+
+.languages .card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.languages .card:hover {
+    /* this gives a up hover effect on the Y axis (vertical)
+        if translateY had positive pixels it would have moved downward on the hover effect
+    */
+    transform: translateY(-15px);
+}
+
+/******************************************************** 
+                FEATURES PAGE STYLING
+********************************************************/
+
+.features-head img, 
+.docs-head img {
+    width: 200px;
+    justify-self: end;
+}
+
+.features-sub-head img {
+    width: 300px;
+    justify-self: end;
+}
+
+.features-main .card > i {
+    margin-right: 20px;
+}
+
+.features-main .grid {
+    padding: 30px;
+}
+
+.features-main .grid >*:first-child {
+grid-column: 1/ span 3;
+}
+
+.features-main .grid >*:nth-child(2) {
+    grid-column: 1/ span 2;
+}
+
+/******************************************************** 
+                DOCS PAGE STYLING
+********************************************************/
+
+.docs-main h3 {
+    margin: 20px;
+}
+
+.docs-main .grid {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+}
+
+.docs-main nav li {
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px #ccc solid;
+}
+
+.docs-main a:hover {
+    font-weight: bold;
+
+}
+
+
+
+
+/******************************************************** 
+                FOOTER STYLING
+********************************************************/
+
+footer .social a {
+    padding: 1rem;
+}
+
+/********************************************************************************************
+               MEDIA QUERIES
+*********************************************************************************************/
+
+
+
+/******************************************************** 
+                TABLETS AND UNDER
+********************************************************/
+@media(max-width: 768px) {
+    /* anything thats under 768px will be styled here */
+    .grid,
+    .showcase .grid,
+    .stats .grid,
+    .cli .grid,
+    .cloud .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .showcase {
+        height: auto;
+    }
+
+    .showcase-text {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .showcase-form {
+        justify-self: center;
+        margin: auto;
+    }
+
+    .cli .grid > *:first-child {
+        grid-column: 1;
+        grid-row: 1;
+    }
+}
+
+
+
+
+/******************************************************** 
+                        MOBILE  
+********************************************************/
+
+@media(max-width: 500px) {
+    /* anything under 500px will be styled here */
+    .navbar {
+        height: 110px;
+    }
+
+    .navbar .flex {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
