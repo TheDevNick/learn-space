@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>LearnSpace | Dashboard</title>
+</head>
+<body>
+        <div class="navbar">
+        <div class="container flex">
+            <h1 class="logo">Le<i class="fab fa-atlassian fa-xs"></i>rn Sp<i class="fab fa-atlassian fa-xs"></i>ce <i class="fas fa-brain"></i></h1>
+            <nav>
+                <ul>
+                    <li><a href="/accomplishments">Accomplishments</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </nav> 
+        </div>
+    </div>
+
+    <h1> welcome message will go here</h1>
+    <h3 class="successMsg">card added success message will go here</h3>
+    <!-- @* <h3 class="successMsg">@TempData["AddedDeck"]</h3> *@ -->
+    
+<!-- @* This section will show the topics *@ -->
+ 
+<div class="container">
+    <section id="headerInfo">
+        <h1 id="topicHeading">Topics you are currently learing</h1>
+        <h2>Add A Topic <a href="/newtopic"><i class="fas fa-plus-circle fa-lg"></i></a></h2>
+    </section>
+   
+            <!-- @foreach (Topic topic in ViewBag.Topics)
+            {  -->
+                <% info.forEach((topic) => { %>
+                    <section class="topicBox card">
+                        <div>
+                            <h2>Name of Topic</h2>
+                            <h3><a href="viewTopic/@topic.TopicId"><%= topic.topicName %></a></h3>
+                        </div>
+    
+                        <div>
+                            <h2>Topic Difficulty Level</h2>
+                            <h3><a href="viewTopic/topic.TopicId"><%= topic.topicDifficulty %></a></h3>
+                           <% if (topic.topicDifficulty == "Medium😕" || topic.topicDifficulty == "Hard😭") { %> 
+                               <strong><a href="/adddeck" class="cardOption">Create Flashcards?🧠</a></strong> 
+                           <% } %> 
+                        </div>
+                        <div>
+                            <h2>Thoughts About Topic</h2>
+                            <h3><a href="viewTopic/topic.TopicId"><%= topic.topicFeedback %></a></h3>
+                        </div>
+                        <div class="modifyTopic">
+                            <a href="/viewtopic/edit/@topic.TopicId"><i class="fas fa-edit fa-2x"></i></a>
+                            <a href="/viewTopic/delete/@topic.TopicId"><i class="fas fa-trash fa-2x"></i></a>
+                        </div>
+                    </section>
+               <% }) %>
+           
+               
+            <!-- } -->
+
+</div>
+        
+</body>
+</html>

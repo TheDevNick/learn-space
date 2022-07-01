@@ -294,3 +294,28 @@ UTILITIES STYLING  (classes that will be used all around website)
 .p-5 {
     padding: 4rem;
 }
+
+
+/********************************************************************************************
+               MEDIA QUERIES
+*********************************************************************************************/
+
+
+
+/******************************************************** 
+                TABLETS AND UNDER
+********************************************************/
+@media(max-width: 768px) {
+    /* anything thats under 768px will be styled here */
+    .topicBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .topicBox div {
+        margin: 0 auto;
+    }
+
+    
+}
