@@ -54,7 +54,10 @@ User.findOne({email: email})
         console.log(newUser);
         console.log('========= NEW USER CREATED ===========')
         newUser.save()
-        res.redirect('/dashboard')
+            .then(user => {
+                req.flash('success_msg', 'Registered! Please login')
+                res.redirect('/')
+            })
     }
 })
 }

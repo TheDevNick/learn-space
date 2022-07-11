@@ -188,13 +188,23 @@ UTILITIES STYLING  (classes that will be used all around website)
 }
 
 .alert-success {
-    background-color: var(--success-color);
-    color: #fff;
+    border-radius: 5px;
+    border: 1px solid var(--success-color);
+    color: var(--success-color);
+    text-align: center;
+    font-weight: bold;
 }
 
 .alert-error {
-    background-color: var(--error-color);
-    color: #fff;
+    border-radius: 5px;
+    border: 1px solid var(--error-color);
+    color: var(--error-color);
+    text-align: center;
+    font-weight: bold;
+}
+
+.alert-error p {
+    margin: 0;
 }
 
 
