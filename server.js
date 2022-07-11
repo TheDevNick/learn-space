@@ -1,21 +1,20 @@
 const express = require('express')
 const app = express()
+const mongoose = require('mongoose')
+const flash = require('connect-flash')
+const session = require('express-session')
 const morgan = require('morgan')
-require('dotenv').config()
-const PORT = process.env.PORT || 3001
-const MongoClient = require('mongodb').MongoClient
 
 
-// DB CONNECTION
-let db,
-    dbConnectionStr = process.env.DB_STRING,
-    dbName = 'learnspace'
 
-MongoClient.connect(dbConnectionStr, {useUnifiedTopology: true})
-    .then(client => {
-        console.log(`Connected to ${dbName} Database`)
-        db = client.db(dbName)
-    })
+const dbStr = require('./config/db').MongoURI
+let dbName = 'learnspace'
+
+mongoose.connect(dbStr, {useUnifiedTopology: true})
+.then(client => {
+    console.log(`Connected to ${dbName} Database`)
+})
+
 
 // MIDDLEWARE
 app.set('view engine', 'ejs')
@@ -25,34 +24,13 @@ app.use(express.json())
 app.use(morgan(`METHOD: :method | URL: localhost: :url |`))
 
 // routes
-app.get('/', (req, res) => {
-    res.render('index.ejs', {})
-})
+app.use('/', require('./routes/index'))
+app.use('/', require('./routes/users'))
+app.use('/', require('./routes/dashboard'))
+app.use('/', require('./routes/newTopic'))
 
-app.get('/dashboard', (req, res) => {
-    db.collection('topics').find().toArray()
-        .then(results => {
-            res.render('dashboard.ejs', {info: results})
-        })
-        .catch(err => console.error(err))
-})
-
-app.get('/newTopic', (req, res) => {
-    res.render('newTopic.ejs', {})
-})
-app.post('/newTopic', (req, res) => {
-    db.collection('topics').insertOne(
-        {topicName: req.body.topicName,
-        topicDifficulty: req.body.topicDifficulty, 
-        topicFeedback: req.body.topicFeedback}
-        )
-        .then(result => {
-            console.log('topic Added')
-            res.redirect('/dashboard')
-        })
-        .catch(err => console.error(err))
-})
 // listen
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}... You better go catch it!`);
 })

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/css/utilities.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>LearnSpace | Track Your Learning</title>
 </head>
 <body>
@@ -33,18 +33,27 @@
                 <a href="#" class="btn btn-outline">Read More</a>
             </div>
             <div class="showcase-form card">
-                <h2>Login</h2>
-                <form action="/Login" method="POST">
+                <h2>Sign Up</h2>
+                <%- include ("./partials/messages") %>
+                <form action="/register" method="POST">
                     <div class="form-control">
                     <span class="error"></span>
-                    <input type="text" id="username" name="username" placeholder="Username">
+                        <input type="text" id="username" name="username" placeholder="Username">
                     </div>
                     <div class="form-control">
                     <span class="error"></span>
-                    <input type="password" id="password" name="password" placeholder="Password">
+                        <input type="email" id="email" name="email" placeholder="Email">
                     </div>
-                    <input type="submit" value="Login" class="btn btn-primary">
-                    <a href="/">Not Registered? <span id="loginLink">Sign Up</span></a>
+                    <div class="form-control">
+                    <span class="error"></span>
+                        <input type="password" id="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="form-control">
+                    <span class="error"></span>
+                        <input type="password" id="password2" name="password2" placeholder="Confirm Password">
+                    </div>
+                    <input type="submit" value="Sign Up" class="btn btn-primary">
+                    <a href="/users/login">Already Registered? <span id="loginLink">Log in</span></a>
                 </form>
                 <h4 class="successMsg">success message</h4>
             </div>
@@ -131,6 +140,6 @@
     </footer>
     
     
-
+    
 </body>
 </html>
