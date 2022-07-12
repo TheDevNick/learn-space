@@ -4,6 +4,10 @@ const mongoose = require('mongoose')
 const flash = require('connect-flash')
 const session = require('express-session')
 const morgan = require('morgan')
+const passport = require('passport')
+
+// passport config
+require('./config/passport')(passport)
 
 
 
@@ -11,7 +15,7 @@ const dbStr = require('./config/db').MongoURI
 let dbName = 'learnspace'
 
 mongoose.connect(dbStr, {useUnifiedTopology: true})
-.then(client => {
+.then(() => {
     console.log(`Connected to ${dbName} Database`)
 })
 
@@ -31,7 +35,10 @@ app.use(session({
     resave: true,
     saveUninitialized: true
   }))
-  
+
+//   Passport middleware
+app.use(passport.initialize())
+app.use(passport.session())
 // CONNECT FLASH
 app.use(flash())
 
@@ -39,6 +46,7 @@ app.use(flash())
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg')
     res.locals.error_msg = req.flash('error_msg')
+    res.locals.error = req.flash('error')
     next()
 })
 

@@ -13,6 +13,8 @@ const TopicSchema = new mongoose.Schema({
         type: String,
         required: true
     }
+
+    // add created by field here
 })
 
 const Topic = mongoose.model('Topic', TopicSchema, 'topics')
