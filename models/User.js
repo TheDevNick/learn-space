@@ -18,7 +18,6 @@ const UserSchema = new mongoose.Schema({
         default: Date.now
     }
 })
-// , {collection: 'registered-users'}
 
 const User = mongoose.model('User', UserSchema,'registered-users')
 module.exports = User
