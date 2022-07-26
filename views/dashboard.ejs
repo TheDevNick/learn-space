@@ -25,9 +25,7 @@
 
     <h1 class="p-1"> Welcome, <%= username %></h1>
     <h3 class="successMsg">card added success message will go here</h3>
-    <!-- @* <h3 class="successMsg">@TempData["AddedDeck"]</h3> *@ -->
-    
-<!-- @* This section will show the topics *@ -->
+
  
 <div class="container">
     <section id="headerInfo">
@@ -38,23 +36,23 @@
                     <section class="topicBox card">
                         <div>
                             <h2>Name of Topic</h2>
-                            <h3><a href="viewTopic/@topic.TopicId"><%= topic.topicName %></a></h3>
+                            <h3><%= topic.topicName %></h3>
                         </div>
     
                         <div>
                             <h2>Topic Difficulty Level</h2>
-                            <h3><a href="viewTopic/topic.TopicId"><%= topic.topicDifficulty %></a></h3>
+                            <h3><%= topic.topicDifficulty %></h3>
                            <% if (topic.topicDifficulty == "Medium😕" || topic.topicDifficulty == "Hard😭") { %> 
                                <strong><a href="/adddeck" class="cardOption">Create Flashcards?🧠</a></strong> 
                            <% } %> 
                         </div>
                         <div>
                             <h2>Thoughts About Topic</h2>
-                            <h3><a href="viewTopic/topic.TopicId"><%= topic.topicFeedback %></a></h3>
+                            <h3><%= topic.topicFeedback %></h3>
                         </div>
                         <div class="modifyTopic">
-                            <a href="/viewtopic/edit/@topic.TopicId"><i class="fas fa-edit fa-2x"></i></a>
-                            <a href="/viewTopic/delete/@topic.TopicId"><i class="fas fa-trash fa-2x"></i></a>
+                            <a href="/edit/<% topic._id %>"><i class="fas fa-edit fa-2x"></i></a>
+                            <a href="/delete/<% topic._id %>"><i class="fas fa-trash fa-2x"></i></a>
                         </div>
                     </section>
                <% }) %>

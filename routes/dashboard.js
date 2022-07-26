@@ -9,7 +9,8 @@ router.get('/dashboard',(req, res) => {
     .then(results => {
         res.render('dashboard', {
             info: results,
-            username: req.user.username
+            username: req.user.username,
+            id: _id
         })
     })
         .catch(err => console.error(err))

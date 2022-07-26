@@ -55,9 +55,10 @@ app.use('/', require('./routes/index'))
 app.use('/', require('./routes/users'))
 app.use('/', require('./routes/dashboard'))
 app.use('/', require('./routes/newTopic'))
+app.use('/', require('./routes/edit'))
 
 // LISTEN
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}... You better go catch it!`);
 })
