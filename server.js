@@ -27,7 +27,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
 // LOGGING
-app.use(morgan(`METHOD: :method | URL: localhost: :url |`))
+// app.use(morgan(`METHOD: :method | URL: localhost: :url |`))
 
 // Express Session 
 app.use(session({
@@ -39,6 +39,7 @@ app.use(session({
 //   Passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
+
 // CONNECT FLASH
 app.use(flash())
 
@@ -54,8 +55,7 @@ app.use((req, res, next) => {
 app.use('/', require('./routes/index'))
 app.use('/', require('./routes/users'))
 app.use('/', require('./routes/dashboard'))
-app.use('/', require('./routes/newTopic'))
-app.use('/', require('./routes/edit'))
+app.use('/', require('./routes/topics'))
 
 // LISTEN
 const PORT = process.env.PORT || 3000
